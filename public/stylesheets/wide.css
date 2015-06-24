@@ -1,5 +1,8 @@
 body { background: #999; }
 
+A:link      {text-decoration: none; color: #436EC0 }
+A:visited   {text-decoration: none; color: #436EC0 }
+
 #page-wrap:after { content: "Wide Layout"; }
 
 nav       { float: left; width: 15%; height: 200px ;}
