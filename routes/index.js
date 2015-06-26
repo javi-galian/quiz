@@ -8,6 +8,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Quiz', 'mensaje': 'El portal donde podrá crear sus propios juegos' });
 });
 
+// Autoload de comandos con :quizId
+router.param('quizId', quizController.load);
+
+// Definicion de rutas de /quizes
 router.get('/quizes', quizController.index);
 router.get('/quizes/:quizId(\\d+)', quizController.show);
 router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
