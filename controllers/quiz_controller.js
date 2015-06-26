@@ -35,11 +35,18 @@ exports.show = function(req, res) {
 
 // GET /quizes
 exports.index = function(req, res) {
-	models.Quiz.findAll().then(
+	var options = {'order': [['pregunta', 'ASC']]};
+	if (req.query.search){
+		options.where = ["pregunta like ?", '%' + req.query.search.replace(' ','%') + '%']
+	}
+	models.Quiz.findAll(options).then(
 		function(quizes) {
 			res.render('quizes/index', {'quizes': quizes});
 		}
-	).catch(function(error) { next(error); })
+	).catch(function(error) { 
+		//console.log("Error:"+error) 
+		next(error);
+	})
 };
 
 // GET /quizes/answer
