@@ -9,7 +9,7 @@
 <h2>Quiz: el juego de las preguntas</h2>
 <form method="get" action="/quizes/answer">
 Pregunta: <%= pregunta %><p>
-<input type="text" name="respuesta" value="Responde aquí"/>
+<input type="text" name="respuesta" value="Responde aquí" onFocus="this.value = '';"/>
 <input type="submit" value="Enviar">
 </form>
 </body>
