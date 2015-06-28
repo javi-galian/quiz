@@ -41,7 +41,7 @@ exports.index = function(req, res) {
 	}
 	models.Quiz.findAll(options).then(
 		function(quizes) {
-			res.render('quizes/index', {'quizes': quizes});
+			res.render('quizes/index', {'quizes': quizes, 'search': req.query.search});
 		}
 	).catch(function(error) { 
 		//console.log("Error:"+error) 

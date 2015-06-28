@@ -1,3 +1,9 @@
+<form name="form1" method="get" action="quizes">
+Texto para buscar: 
+<input type="text" name="search" value="<%=search%>">
+<input type="submit" value="Enviar">
+<input type="button" value="Mostrar todas" onClick="window.location='quizes';">
+</form>
 <table>
 <% var i; for(i=0; i < quizes.length; i++) { %>
 	<tr align="left"><td><a href="/quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td></tr>
