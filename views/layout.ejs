@@ -26,10 +26,20 @@
 </nav>
 
 <section class="main" id="s1">
+<% if (errors.length) { %>
+<span id="ErrorMsgs">
+Corregir errores:<br/>
+<% for(var i in errors) { %>
+<span><%= errors[i].message %></span><br/>
+<% } %>
+</span>
+<% } %>
 <%- body %>
 </section>
 
 <footer class="main" id="f1">
+<a href="http://es.wikipedia.org/wiki/Quiz">&iquest;Qu&eacute; es un Quiz?</a>
+<br/>
 <a href="https://github.com/javi-galian/quiz">Proyecto en GitHub</a>
 </footer>
 </div>
