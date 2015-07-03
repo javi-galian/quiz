@@ -1,0 +1,11 @@
+<h2>Estad&iacute;sticas del Quiz</h2>
+
+<table>
+	<tr><td><tr><td>Preguntas totales:</td><td><%= statistics.quizes %></td></tr>
+	<tr><td>Comentarios</td><td><%= statistics.comments %></td></tr>
+	<tr><td>Comentarios no publicados</td><td><%= statistics.commentsUnpublished %>
+		(<%= statistics.comments > 0 ? (statistics.commentsUnpublished * 100 / statistics.comments).toFixed(2)+'%' : '--' %>)</td></tr>
+	<tr><td>Media de comentarios por pregunta</td><td><%= statistics.quizes?(statistics.comments / statistics.quizes).toFixed(2):0 %></td></tr>
+	<tr><td>Preguntas sin comentarios</td><td><%= statistics.quizes - statistics.commentedQuizes %></td></tr>
+	<tr><td>Preguntas con comentarios</td><td><%= statistics.commentedQuizes %></td></tr>
+</table>
